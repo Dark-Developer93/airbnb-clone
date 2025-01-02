@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all -p start:frontend start:backend",
-    "start:frontend": "cross-env PORT=5000 npm --prefix public run dev",
-    "start:admin": "npm --prefix admin-ui start",
-    "start:backend": "npm --prefix server start",
-    "postinstall": "npm i --prefix public && npm i --prefix admin-ui && npm i --prefix server"
+    "start:frontend": "cross-env PORT=5000 yarn --cwd public dev",
+    "start:admin": "yarn --cwd admin-ui start",
+    "start:backend": "yarn --cwd server start",
+    "postinstall": "yarn --cwd public install && yarn --cwd admin-ui install && yarn --cwd server install"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
